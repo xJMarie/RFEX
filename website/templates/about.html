@@ -1,0 +1,63 @@
+{% extends "base.html" %} {% block title %}RFEX - About{% endblock %}
+{% block content %}
+
+<div class="d-flex flex-column w-100 m-2">
+    <!-- About the project -->
+    <div class="p-2  bg-primary">This is the ABOUT PAGE.</div>
+    <!-- About the authors -->
+    <div class="p-2 d-sm-inline-flex justify-content-around">
+        <!-- Card -->
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='img/jma.jpg')}}" class="card-img-top" alt="jma">
+            <div class="card-body">
+                <h5 class="card-title">Juliana Marie Agulto</h5>
+                <p class="card-text">juliana_agulto@dlsu.edu.ph</p>
+                <hr>
+                <p class="card-text">BS Computer Science Major in Computer Systems Engineering</p>
+                <p class="card-text">De La Salle University</p>
+
+            </div>
+        </div>
+        <!-- Card -->
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='img/eb.png')}}" class="card-img-top" alt="eb">
+            <div class="card-body">
+                <h5 class="card-title">Eric Benabaye</h5>
+                <p class="card-text">eric_benabaye@dlsu.edu.ph</p>
+                <hr>
+                <p class="card-text">BS Computer Science Major in Computer Systems Engineering</p>
+                <p class="card-text">De La Salle University</p>
+            </div>
+        </div>
+        <!-- Card -->
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='img/gcg.jpg')}}" class="card-img-top" alt="gcg">
+            <div class="card-body">
+                <h5 class="card-title">Gian Carlo Gutierrez</h5>
+                <p class="card-text">gian_gutierrez@dlsu.edu.ph</p>
+                <hr>
+                <p class="card-text">BS Computer Science Major in Computer Systems Engineering</p>
+                <p class="card-text">De La Salle University</p>
+            </div>
+        </div>
+        <!-- Card -->
+        <div class="card" style="width: 18rem;">
+            <img src="{{url_for('static', filename='img/yln.png')}}" class="card-img-top" alt="yln">
+            <div class="card-body">
+                <h5 class="card-title">Yeohan Lorenzo Noroña</h5>
+                <p class="card-text">yeohan_norona@dlsu.edu.ph</p>
+                <hr>
+                <p class="card-text">BS Computer Science Major in Computer Systems Engineering</p>
+                <p class="card-text">De La Salle University</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="font-raleway bg-c-purple-darker text-center p-4">
+    <p>&copy 2022 <span>RFEX</span></p>
+</footer>
+
+{% endblock %}

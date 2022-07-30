@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}RFEX - Home{% endblock %} {% block
+content %}
+
+<script type="text/javascript">
+  function initMap() {
+    new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 14.5648, lng: 120.9932 },
+      zoom: 16,
+    });
+  }
+</script>
+
+<div class="container-fluid">
+  <div id="map" style="width: 100%; height: 100%"></div>
+</div>
+{% endblock %}
