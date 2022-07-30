@@ -4,4 +4,6 @@ views = Blueprint('views', __name__)        # Blueprint of the application.
 
 @views.route('/')
 def home():
-    return render_template("home.html")
+    #TODO User (Database)
+    user=True;
+    return render_template("home.html", user=user)
