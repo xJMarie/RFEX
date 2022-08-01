@@ -1,6 +1,30 @@
 {% extends "base.html" %} {% block title %}RFEX -Login{% endblock %}
 
 {% block content %}
+<div class="container">
+    {% with messages  = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div class="alert alert-danger alter-dismissable fade show" role="alert">
+            {{message}}
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        {% else %}
+        <div class="alert alert-success alter-dismissable fade show" role="alert">
+        {{message}}
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>            
+        </div>
+        {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</div>
 <section class="col-md-6 my-1 p-5">
     <!-- Tabs -->
     <ul class="nav nav-tabs md-tabs nav-pills nav-fill mb-3" id="tabs" role="tablist">
@@ -13,8 +37,10 @@
                 aria-controls="register-md" aria-selected="false">Register</a>
         </li>
     </ul>
+
     <!-- Content -->
     <div class="tab-content" id="contents">
+        
         <!-- Login Form -->
         <div class="tab-pane fade show active" id="login-md" role="tabpanel" aria-labelledby="login-tab-md">
             <form>
@@ -57,36 +83,36 @@
         </div>
         <!-- Register Form -->
         <div class="tab-pane fade" id="register-md" role="tabpanel" aria-labelledby="register-tab-md">
-            <form>
+            <form method="POST">
                 <!-- First name input -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="registerFName">First Name</label>
-                    <input type="text" id="registerFName" class="form-control" placeholder="First Name" />
+                    <input type="text" id="registerFName" class="form-control" placeholder="First Name" name="registerFName"/>
                 </div>
 
                 <!-- Last name input -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="registerLName">Last Name</label>
-                    <input type="text" id="registerLName" class="form-control" placeholder="Last Name" />
+                    <input type="text" id="registerLName" class="form-control" placeholder="Last Name" name="registerLName"/>
                 </div>
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="loginName">Email</label>
-                    <input type="email" id="registerEmail" class="form-control" placeholder="Email" />
+                    <input type="email" id="registerEmail" class="form-control" placeholder="Email" name="registerEmail"/>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="registerPassword">Password</label>
-                    <input type="password" id="registerPassword" class="form-control" placeholder="Password" />
+                    <input type="password" id="registerPassword" class="form-control" placeholder="Password" name="registerPassword"/>
                 </div>
 
                 <!-- Repeat Password input -->
                 <div class="form-outline mb-4">
-                    <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+                    <label class="form-label" for="registerRepeatPassword" >Repeat password</label>
                     <input type="password" id="registerRepeatPassword" class="form-control"
-                        placeholder="Repeat Password" />
+                        placeholder="Repeat Password" name="registerRepeatPassword"/>
                 </div>
 
                 <!-- Submit button -->
