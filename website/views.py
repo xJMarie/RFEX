@@ -15,3 +15,7 @@ def about():
 @views.route('/login')
 def login():
     return render_template("login.html")
+
+@views.route('/settings')
+def settings():
+    return render_template("settings.html")
