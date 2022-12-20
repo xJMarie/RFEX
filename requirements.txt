@@ -1,0 +1,5 @@
+virtualenv
+flask
+pymongo
+passlib
+tailwindcss

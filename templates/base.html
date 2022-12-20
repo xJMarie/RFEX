@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/styles.css"> -->
+    <link rel="stylesheet" href="/static/css/tailwind.css" />
+
+    <!-- Tailwind -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+    /> -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='/static/css/tailwind.css')}}" /> -->
+
+    <title>RFEX 119</title>
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <nav
+      class="px-2 bg-white border-gray-200 dark:bg-base dark:border-gray-700 flex justify-between p-2"
+    >
+      <!-- TODO: Only show in home page -->
+      <!-- Seach Bar -->
+      <form>
+        <div class="flex bg-brown">
+          <label
+            for="search-dropdown"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            >Search by</label
+          >
+          <button
+            id="dropdownSearch"
+            data-dropdown-toggle="dropdown"
+            class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+            type="button"
+          >
+            Search by
+            <svg
+              aria-hidden="true"
+              class="w-4 h-4 ml-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+
+          <div class="relative w-full">
+            <!-- Input -->
+            <input
+              type="search"
+              id="search-dropdown"
+              class="block p-2.5 md\:w-auto z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+              placeholder="Search"
+              required
+            />
+            <!-- Search Button -->
+            <button
+              type="submit"
+              class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 bg-green"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+              <span class="sr-only">Search</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Side Buttons -->
+      <div class="flex items-center justify-center">
+        <a href="" class="inline-flex px-5">RFEX</a>
+        <button
+          id="dropdownMenuIconButton"
+          data-dropdown-toggle="dropdownDots"
+          class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          type="button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Search by -->
+    <div
+      id="dropdownMenu_Search"
+      class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 absolute top-15 left-0"
+    >
+      <ul
+        class="py-1 text-sm text-gray-700 dark:text-gray-200"
+        aria-labelledby="dropdown-button"
+      >
+        <li>
+          <button
+            type="button"
+            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            City
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            Street
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            Coordinates
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- TODO: Only show depending on the current session. -->
+    <!-- Dropdown menu: Guest -->
+    <div
+      id="dropdownMenu_Guest"
+      class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 absolute top-15 right-0"
+    >
+      <ul
+        class="py-1 text-sm text-gray-700 dark:text-gray-200"
+        aria-labelledby="dropdownMenuIconButton"
+      >
+        <li>
+          <button
+            type="button"
+            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            About
+          </button>
+        </li>
+        <hr>
+        <li>
+          <button
+            type="button"
+            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            Sign In
+          </button>
+        </li>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Dropdown menu: User / Admin -->
+    <div
+      id="dropdownMenu_User"
+      class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 absolute top-15 right-0"
+    >
+      <ul
+        class="py-1 text-sm text-gray-700 dark:text-gray-200"
+        aria-labelledby="dropdownMenuIconButton"
+      >
+        <li>
+          <button
+            type="button"
+            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            About
+          </button>
+          <button
+            type="button"
+            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            Settings
+          </button>
+        </li>
+        <hr>
+        <button
+            type="button"
+            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            Sign Out
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    {% block content %} {# Template inserted here #} {% endblock %}
+
+    <div id="map" class="w-full max-h-full"></div>
+
+    <!-- <footer
+      class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900"
+    > -->
+    <!-- <hr
+        class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+      /> -->
+    <!-- <span
+        class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+        >© RFEX 2022
+      </span>
+    </footer> -->
+
+    <!-- Javascripts -->
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/scripts.js"></script>
+    <script src="/static/js/navbar.js"></script>
+  </body>
+</html>

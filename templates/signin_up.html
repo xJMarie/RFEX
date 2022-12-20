@@ -1,0 +1,155 @@
+{% extends "base.html" %} {% block title %}RFEX - Sign In / Sign Up{% endblock
+%} {% block content %}
+<!-- Sign in Form -->
+<div
+  id="signin_form"
+  class="max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300"
+>
+  <h1 class="text-4xl font-medium">Login</h1>
+  <p class="text-slate-500">Hi, Welcome back 👋</p>
+
+  <form action="" class="my-10">
+    <div class="flex flex-col space-y-5">
+      <!-- Email -->
+      <label for="email">
+        <p class="font-medium text-slate-700 pb-2">Email Address</p>
+        <input
+          id="email_signin"
+          name="email"
+          type="email"
+          class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+          placeholder="Enter email address"
+        />
+      </label>
+      <!-- Password -->
+      <label for="password">
+        <p class="font-medium text-slate-700 pb-2">Password</p>
+        <input
+          id="password_signin"
+          name="password"
+          type="password"
+          class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+          placeholder="Enter your password"
+        />
+      </label>
+      <!-- Forgot Password -->
+      <div class="flex flex-row justify-between">
+        <div>
+          <a href="#" class="font-medium text-indigo-600">Forgot Password?</a>
+        </div>
+      </div>
+      <!-- Log in button -->
+      <button
+        id="signin_btn"
+        class="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
+      >
+        <span>Sign In</span>
+      </button>
+      <!-- Not yet register -->
+      <p class="text-center">
+        Not registered yet?
+        <button
+          id="goRegister_btn"
+          class="text-indigo-600 font-medium inline-flex space-x-1 items-center"
+          type="button"
+          onclick="goRegister()"
+        >
+          <span>Register now</span>
+        </button>
+      </p>
+    </div>
+  </form>
+</div>
+
+<!-- Register Form -->
+<div
+  id="register_form"
+  class="hidden max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300"
+>
+  <h1 class="text-4xl font-medium">Create an Account</h1>
+  <p class="text-slate-500">Welcome to RFEX</p>
+
+  <form action="" class="my-10">
+    <div class="flex flex-col space-y-5">
+      <!-- First name -->
+      <label for="firstName">
+        <p class="font-medium text-slate-700 pb-2">First Name</p>
+        <input
+          id="firstName_register"
+          name="fName"
+          type="text"
+          class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+          placeholder="First Name"
+        />
+      </label>
+      <!-- Last name -->
+      <label for="lastName">
+        <p class="font-medium text-slate-700 pb-2">Last Name</p>
+        <input
+          id="lastName_register"
+          name="lName"
+          type="text"
+          class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+          placeholder="Last Name"
+        />
+      </label>
+      <!-- Email -->
+      <label for="email">
+        <p class="font-medium text-slate-700 pb-2">Email Address</p>
+        <input
+          id="email_register"
+          name="email"
+          type="email"
+          class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+          placeholder="Email Address"
+        />
+      </label>
+      <!-- Password -->
+      <label for="password">
+        <p class="font-medium text-slate-700 pb-2">Password</p>
+        <input
+          id="password_register"
+          name="password"
+          type="password"
+          class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+          placeholder="Password"
+        />
+      </label>
+      <!-- Confirm Password -->
+      <label for="password">
+        <p class="font-medium text-slate-700 pb-2">Confirm Password</p>
+        <input
+          id="confirmpassword_register"
+          name="password"
+          type="password"
+          class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
+          placeholder="Confirm Password"
+        />
+      </label>
+      <!-- Register button -->
+      <button
+        id="register_btn"
+        class="w-full mt-5 py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
+      >
+        <span>Register</span>
+      </button>
+
+      <!-- Already have an account -->
+      <p class="text-center mt-5">
+        Already have an account?
+        <button
+          id="goSignin_btn"
+          class="text-indigo-600 font-medium inline-flex space-x-1 items-center"
+          type="button"
+          onclick="goSignin()"
+        >
+          <span>Sign in</span>
+        </button>
+      </p>
+    </div>
+  </form>
+</div>
+
+<!-- Javascript -->
+<script src="/static/js/signin_up.js"></script>
+{% endblock %}

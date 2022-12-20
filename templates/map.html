@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block title %}RFEX - Home{% endblock %} {% block
+content %}
+
+<!-- Google Maps API -->
+<script
+  async
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBjgJC6A4f8OBhm0qniioWbHGQ4Cmk1Gs&callback=initMap"
+></script>
+
+<div class="m-0 p-0 static">
+  <div id="map" class="w-full h-screen"></div>
+</div>
+
+<!-- Javascript -->
+<script src="/static/js/map.js"></script>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+1. Open terminal (cmd)
+2. Go to rfex environment
+3. Use 'env\Scripts\activate' to activate the env in Windows.
+
+-- Run Tailwind --
+npn run dev
+
+-- Run the program in windows --
+//set FLASK_APP = app.py
+//set FLASK_ENV = development
+//flask run
+
+type in the command prompt: python app.py
